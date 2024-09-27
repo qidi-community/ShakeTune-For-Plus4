@@ -100,7 +100,8 @@ class VibrationsGraphCreator(GraphCreator):
         for old_file in files[keep_results:]:
             old_file.unlink()
             tar_file = old_file.with_suffix('.tar.gz')
-            tar_file.unlink(missing_ok=True)
+            if tar_file.exists():
+                tar_file.unlink()
 
 
 ######################################################################

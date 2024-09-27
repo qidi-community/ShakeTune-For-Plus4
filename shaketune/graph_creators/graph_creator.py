@@ -70,7 +70,8 @@ class GraphCreator(abc.ABC):
 
     def _remove_files(self, lognames: List[Path]) -> None:
         for csv in lognames:
-            csv.unlink(missing_ok=True)
+            if csv.exists():
+                csv.unlink()
 
     def get_type(self) -> str:
         return self._type

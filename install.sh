@@ -64,7 +64,7 @@ function check_download {
 
     if [ ! -d "${K_SHAKETUNE_PATH}" ]; then
         echo "[DOWNLOAD] Downloading Klippain Shake&Tune module repository..."
-        if git -C $shaketunedirname clone https://github.com/Frix-x/klippain-shaketune.git $shaketunebasename; then
+        if git -C $shaketunedirname clone https://github.com/stew675/klippain-shaketune-for-qidi-plus4.git $shaketunebasename; then
             chmod +x ${K_SHAKETUNE_PATH}/install.sh
             printf "[DOWNLOAD] Download complete!\n\n"
         else
@@ -87,6 +87,7 @@ function setup_venv {
         rm -rf "${OLD_K_SHAKETUNE_VENV}"
     fi
 
+    declare -x PS1=""
     source "${KLIPPER_VENV_PATH}/bin/activate"
     echo "[SETUP] Installing/Updating K-Shake&Tune dependencies..."
     pip install --upgrade pip
@@ -120,14 +121,6 @@ function link_module {
     fi
 }
 
-function add_updater {
-    update_section=$(grep -c '\[update_manager[a-z ]* Klippain-ShakeTune\]' $MOONRAKER_CONFIG || true)
-    if [ "$update_section" -eq 0 ]; then
-        echo -n "[INSTALL] Adding update manager to moonraker.conf..."
-        cat ${K_SHAKETUNE_PATH}/moonraker.conf >> $MOONRAKER_CONFIG
-    fi
-}
-
 function restart_klipper {
     echo "[POST-INSTALL] Restarting Klipper..."
     sudo systemctl restart klipper
@@ -150,6 +143,5 @@ check_download
 setup_venv
 link_extension
 link_module
-add_updater
 restart_klipper
 restart_moonraker

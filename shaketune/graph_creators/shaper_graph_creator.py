@@ -96,7 +96,8 @@ class ShaperGraphCreator(GraphCreator):
             return  # No need to delete any files
         for old_file in files[2 * keep_results :]:
             csv_file = old_file.with_suffix('.csv')
-            csv_file.unlink(missing_ok=True)
+            if csv_file.exists():
+                csv_file.unlink()
             old_file.unlink()
 
 

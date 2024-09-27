@@ -94,7 +94,8 @@ class BeltsGraphCreator(GraphCreator):
             file_date = '_'.join(old_file.stem.split('_')[1:3])
             for suffix in {'A', 'B'}:
                 csv_file = self._folder / f'beltscomparison_{file_date}_{suffix}.csv'
-                csv_file.unlink(missing_ok=True)
+                if csv_file.exists():
+                    csv_file.unlink()
             old_file.unlink()
 
 
