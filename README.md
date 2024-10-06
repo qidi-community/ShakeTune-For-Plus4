@@ -38,4 +38,6 @@ Follow these steps to install Shake&Tune on your printer:
      #    printer.cfg file. If you want to see the macros in the webui, set this to True.
      ```
 
+## Documentation
+
 Don't forget to check out **[Shake&Tune documentation here](./docs/README.md)**.
