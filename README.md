@@ -15,11 +15,13 @@ All thanks for Frix-x for their work on this project
 ## Installation
 
 Follow these steps to install Shake&Tune on your printer:
-  1. Be sure to have a working accelerometer on your machine and a `[resonance_tester]` section defined. You can follow the official [Measuring Resonances Klipper documentation](https://www.klipper3d.org/Measuring_Resonances.html) to configure it.
+  1. The Qidi Plus 4 already comes pre-installed with a working accelerometer and by default is configured with it enabled, and so there should be no additional work required for Klippain Shake & Tune to use it.
+
   1. Install Shake&Tune by running over SSH on your printer:
      ```bash
      cd /home/mks && wget -O - https://raw.githubusercontent.com/stew675/klippain-shaketune-for-qidi-plus4/main/install.sh | bash
      ```
+
   1. Then, append the following to your `printer.cfg` file and restart Klipper:
      ```
      [shaketune]
@@ -36,7 +38,7 @@ Follow these steps to install Shake&Tune on your printer:
      # show_macros_in_webui: True
      #    Mainsail and Fluidd doesn't create buttons for "system" macros that are not in the
      #    printer.cfg file. If you want to see the macros in the webui, set this to True.
-     ```
+     ``` <p>
 
 ## Documentation
 
