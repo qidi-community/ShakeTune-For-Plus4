@@ -38,7 +38,6 @@ Follow these steps to install Shake&Tune on your printer:
      # show_macros_in_webui: True
      #    Mainsail and Fluidd doesn't create buttons for "system" macros that are not in the
      #    printer.cfg file. If you want to see the macros in the webui, set this to True.
-     ``` <p>
 
 ## Documentation
 
