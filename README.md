@@ -22,7 +22,7 @@ Follow these steps to install Shake&Tune on your printer:
      cd /home/mks && wget -O - https://raw.githubusercontent.com/stew675/klippain-shaketune-for-qidi-plus4/main/install.sh | bash
      ```
 
-  1. Then, append the following to your `printer.cfg` file and restart Klipper:
+  1. Then, insert the following into your `printer.cfg` file BEFORE the `SAVE_CONFIG` section and restart Klipper:
      ```
      [shaketune]
      timeout: 1200
