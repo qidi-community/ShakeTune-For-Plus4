@@ -19,7 +19,7 @@ Follow these steps to install Shake&Tune on your printer:
 
   1. Install Shake&Tune by running over SSH on your printer:
      ```bash
-     cd /home/mks && wget -O - https://raw.githubusercontent.com/stew675/klippain-shaketune-for-qidi-plus4/main/install.sh | bash
+     cd /home/mks && wget -O - https://github.com/qidi-community/ShakeTune-For-Plus4/blob/main/install.sh | bash
      ```
 
   1. Then, insert the following into your `printer.cfg` file BEFORE the `SAVE_CONFIG` section and restart Klipper:
